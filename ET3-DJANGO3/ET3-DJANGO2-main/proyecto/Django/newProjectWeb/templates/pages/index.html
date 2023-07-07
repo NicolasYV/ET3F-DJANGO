@@ -5,32 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
     {%load bootstrap5%}
     {%bootstrap_css%}
     {%bootstrap_javascript%}
 </head>
-<style>
-    body{
-
-
-        background-color: aliceblue;
-
-
-    }
-
-
-    .serif{
-        font-family: 'Times New Roman', Times, serif;
-    }
-
-
-    h1{text-align: center;}
-</style>
 <body>
   <div class="container-fluid p-0">
     <nav class="navbar sticky-top navbar-expand-lg p-3" style="background-color: #1CB663;">
         <a class="navbar-brand" href="#"><b>
-            <img src="pollo.png" alt="pollo" width="33" height="31" class="d-inline-block align-text-top"> JARDINERIA STARDEW</b></a>
+            <img src="{% static 'img/pollo.png' %}" width="33" height="31" class="d-inline-block align-text-top"> JARDINERIA STARDEW</b></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Roggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,8 +26,8 @@
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cuenta</a>
                       <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="login.html">Log in</a></li>
-                          <li><a class="dropdown-item" href="form1.html">Sign in</a></li>
+                          <li><a class="dropdown-item" href="{% url 'login' %}">Log in</a></li>
+                          <li><a class="dropdown-item" href="{% url 'form1' %}">Sign in</a></li>
                           <li><hr class="dropdown-divider"></li>
                           <li><a class="dropdown-item" href="#">Cerrar sesion</a></li>
                       </ul>
@@ -51,7 +36,7 @@
                     <a class="nav-link" href="#">Plan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tienda</a>
+                    <a class="nav-link" href="{% url 'listProducto' %}">Tienda</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Información</a>
@@ -72,7 +57,7 @@
     </nav>
 </div>
         <div class="card text-bg-dark">
-            <img src="v.jpg" class="card-img" alt="calmao" width="300" height="500">
+            <img src="{% static 'img/star.jpg'%}" class="card-img"  width="300" height="500">
             <div class="card-img-overlay">
               <h5 class="card-title">JARDINERIA de calidad </h5>
               <p class="card-text">Jardineria pa la casita</p>
@@ -84,13 +69,13 @@
         <div class="card-body">
           <h5 class="card-title">Productos</h5>
           <p class="card-text">Revise nuestros productos. Tenemos desde flores hasta arboles</p>
-          <a href="Plants.html" class="card-link">Ir a productos</a>
+          <a href="{% url 'listProducto' %}" class="card-link">Ir a productos</a>
         </div>
         <div class="card" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">Membresía</h5>
             <p class="card-text">¿Obsesión por las plantas? Te invitamos a ser miembro rellenando este formulario</p>
-            <a href="form1.html" class="card-link">Inscribirse</a>
+            <a href="{% url 'form1' %}" class="card-link">Inscribirse</a>
           </div>
       </div>
 

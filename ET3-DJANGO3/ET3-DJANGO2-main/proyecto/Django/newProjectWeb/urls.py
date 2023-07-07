@@ -16,10 +16,7 @@ urlpatterns = [
     path('retModProducto/<str:pk>', views.retModProducto, name ="retModProducto"),
     path('updProducto', views.updProducto, name="updProducto"),
     path('formAdd', views.formAdd, name = "formAdd"),
-    path('userAdd'),
-    path('userEdit',),
-    path('userList', ),
-    path("", views.login, name="login"),
-    path("logout", views.logout, name="logout"),
+    path("", views.index, name="login"),
+    #path("logout", views.logout, name="logout"),
 
 ]
